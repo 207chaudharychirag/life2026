@@ -1888,6 +1888,109 @@ ul { list-style: none; }
     font-size: 0.5rem;
 }
 
+/* ===== Project Impact ===== */
+.project-impact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 1rem 0;
+    padding: 0.8rem 0;
+    border-top: 1px solid rgba(212, 184, 150, 0.1);
+    border-bottom: 1px solid rgba(212, 184, 150, 0.1);
+}
+
+.project-impact span {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    color: var(--tan);
+    opacity: 0.8;
+    position: relative;
+    padding-left: 0.8rem;
+}
+
+.project-impact span::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    color: #4ADE80;
+    font-size: 0.6rem;
+}
+
+/* ===== Journey Story / Testimonial ===== */
+.journey-story {
+    background: linear-gradient(160deg, var(--brown-deep) 0%, #2E3A4A 100%);
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.journey-story::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+.story-content {
+    position: relative;
+    z-index: 1;
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.story-quote {
+    position: relative;
+}
+
+.story-quote svg {
+    color: var(--tan);
+    margin-bottom: 1.5rem;
+}
+
+.story-quote blockquote {
+    font-family: var(--font-heading);
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    color: var(--tan-light);
+    line-height: 1.9;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.story-author {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.story-author-line {
+    width: 40px;
+    height: 1px;
+    background: var(--tan);
+    opacity: 0.4;
+}
+
+.story-author span {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--tan);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* ===== About CTA ===== */
+.about-cta {
+    margin-top: 2rem;
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
 /* ===== Contact ===== */
 .contact {
     background: var(--white);
