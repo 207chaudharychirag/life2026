@@ -680,7 +680,7 @@ ul { list-style: none; }
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
 
@@ -837,6 +837,54 @@ ul { list-style: none; }
     margin-top: 1rem;
 }
 
+/* ===== Interests ===== */
+.interests {
+    background: var(--cream);
+    padding: 5rem 0;
+}
+
+.interests-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-top: 2rem;
+}
+
+.interest-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 1.6rem;
+    background: var(--white);
+    border-radius: 60px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--brown-dark);
+    transition: var(--transition);
+    border: 1px solid var(--tan-light);
+}
+
+.interest-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    border-color: var(--blue);
+}
+
+.interest-icon {
+    color: var(--blue);
+    font-size: 0.6rem;
+}
+
+/* ===== Project Client ===== */
+.project-client {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--tan);
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+}
+
 /* ===== Footer ===== */
 .footer {
     background: var(--brown-deep);
@@ -877,6 +925,10 @@ ul { list-style: none; }
     .project-grid,
     .cert-grid {
         grid-template-columns: 1fr;
+    }
+
+    .interests-grid {
+        justify-content: center;
     }
 
     .skills-grid {
