@@ -15,13 +15,36 @@
 </head>
 <body>
 
-    <!-- Loader -->
-    <div class="loader" id="loader">
-        <div class="loader-inner">
-            <div class="loader-name">CS</div>
-            <div class="loader-bar"><div class="loader-fill"></div></div>
+    <!-- Journey Intro Screen -->
+    <div class="journey-intro" id="journeyIntro">
+        <div class="journey-bg"></div>
+        <div class="journey-content">
+            <div class="journey-road">
+                <div class="road-line"></div>
+                <div class="road-line"></div>
+                <div class="road-line"></div>
+            </div>
+            <p class="journey-pre">Chirag Singh</p>
+            <h1 class="journey-title">Let's Start<br>The Journey</h1>
+            <button class="journey-btn" id="journeyBtn">
+                <span class="journey-btn-text">Tap to Begin</span>
+                <span class="journey-btn-pulse"></span>
+            </button>
+        </div>
+        <!-- Car Window Frame -->
+        <div class="car-window" id="carWindow">
+            <div class="window-glass" id="windowGlass"></div>
+            <div class="window-frame">
+                <div class="window-frame-top"></div>
+                <div class="window-frame-left"></div>
+                <div class="window-frame-right"></div>
+                <div class="window-reflection"></div>
+            </div>
         </div>
     </div>
+
+    <!-- Window transition overlay for between sections -->
+    <div class="window-overlay" id="windowOverlay"></div>
 
     <!-- Cursor follower -->
     <div class="cursor-dot" id="cursorDot"></div>

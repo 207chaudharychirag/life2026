@@ -1,12 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const loader = document.getElementById('loader');
-    setTimeout(() => {
-        loader.classList.add('hidden');
-    }, 1400);
-
+    const journeyIntro = document.getElementById('journeyIntro');
+    const journeyBtn = document.getElementById('journeyBtn');
+    const carWindow = document.getElementById('carWindow');
     const nav = document.getElementById('nav');
     const navToggle = document.getElementById('navToggle');
     const mobileMenu = document.getElementById('mobileMenu');
+
+    document.body.style.overflow = 'hidden';
+    nav.style.opacity = '0';
+    nav.style.pointerEvents = 'none';
+
+    journeyBtn.addEventListener('click', () => {
+        carWindow.classList.add('active');
+
+        setTimeout(() => {
+            carWindow.classList.add('rolling');
+        }, 400);
+
+        setTimeout(() => {
+            journeyIntro.classList.add('hidden');
+            document.body.style.overflow = '';
+            nav.style.opacity = '1';
+            nav.style.pointerEvents = '';
+            nav.style.transition = 'opacity 0.5s ease';
+        }, 1600);
+
+        setTimeout(() => {
+            journeyIntro.style.display = 'none';
+        }, 2500);
+    });
 
     window.addEventListener('scroll', () => {
         nav.classList.toggle('scrolled', window.scrollY > 50);
