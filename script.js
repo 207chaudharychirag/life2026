@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const loader = document.getElementById('loader');
+    setTimeout(() => {
+        loader.classList.add('hidden');
+    }, 1400);
+
     const nav = document.getElementById('nav');
     const navToggle = document.getElementById('navToggle');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -19,13 +24,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const cursorDot = document.getElementById('cursorDot');
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        document.addEventListener('mousemove', (e) => {
+            cursorDot.style.left = e.clientX - 4 + 'px';
+            cursorDot.style.top = e.clientY - 4 + 'px';
+        });
+
+        document.querySelectorAll('a, button, .project-card, .exp-item, .cert-card, .skill-category').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorDot.style.transform = 'scale(3)';
+                cursorDot.style.opacity = '0.5';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorDot.style.transform = 'scale(1)';
+                cursorDot.style.opacity = '1';
+            });
+        });
+    }
+
     const reveals = document.querySelectorAll(
-        '.timeline-item, .exp-card, .project-card, .skill-category, ' +
+        '.timeline-item, .exp-item, .project-card, .skill-category, ' +
         '.cert-card, .about-grid, .section-title, .section-label, ' +
-        '.contact-content, .section-subtitle'
+        '.contact-content, .section-subtitle, .interests-section, ' +
+        '.photo-accent-card, .about-cta'
     );
 
-    reveals.forEach(el => el.classList.add('reveal'));
+    reveals.forEach((el, i) => {
+        el.classList.add('reveal');
+        el.style.transitionDelay = (i % 4) * 0.1 + 's';
+    });
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -33,9 +61,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 entry.target.classList.add('visible');
             }
         });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
     reveals.forEach(el => observer.observe(el));
+
+    const statNumbers = document.querySelectorAll('.stat-number');
+    let statsCounted = false;
+
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !statsCounted) {
+                statsCounted = true;
+                statNumbers.forEach(num => {
+                    const target = parseInt(num.dataset.count);
+                    let current = 0;
+                    const step = Math.ceil(target / 20);
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        num.textContent = current;
+                    }, 60);
+                });
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.hero-stats').forEach(el => statsObserver.observe(el));
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', (e) => {
@@ -52,20 +106,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('.section, .hero');
 
-    window.addEventListener('scroll', () => {
+    const updateActiveNav = () => {
         let current = '';
         sections.forEach(section => {
-            const top = section.offsetTop - 100;
+            const top = section.offsetTop - 120;
             if (window.scrollY >= top) {
                 current = section.getAttribute('id');
             }
         });
 
         navLinks.forEach(link => {
-            link.style.color = '';
+            link.classList.remove('active');
             if (link.getAttribute('href') === `#${current}`) {
-                link.style.color = 'var(--blue)';
+                link.classList.add('active');
             }
         });
-    });
+    };
+
+    window.addEventListener('scroll', updateActiveNav);
+    updateActiveNav();
 });

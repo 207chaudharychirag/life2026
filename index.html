@@ -3,54 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chirag Singh — Portfolio</title>
+    <title>Chirag Singh — MBA Graduate | Product & Strategy</title>
+    <meta name="description" content="Chirag Singh — MBA Graduate from RMIT University. Aspiring Product & Strategy Professional based in Melbourne, Australia.">
+    <meta property="og:title" content="Chirag Singh — Portfolio">
+    <meta property="og:description" content="MBA Graduate | Product & Strategy | Digital Transformation">
+    <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-name">CS</div>
+            <div class="loader-bar"><div class="loader-fill"></div></div>
+        </div>
+    </div>
+
+    <!-- Cursor follower -->
+    <div class="cursor-dot" id="cursorDot"></div>
+
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-inner">
-            <a href="#hero" class="nav-logo">CS</a>
+            <a href="#hero" class="nav-logo">CS<span class="nav-logo-dot">.</span></a>
             <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#education">Education</a>
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
+                <a href="#about" data-num="01">About</a>
+                <a href="#education" data-num="02">Education</a>
+                <a href="#experience" data-num="03">Experience</a>
+                <a href="#projects" data-num="04">Projects</a>
+                <a href="#skills" data-num="05">Skills</a>
+                <a href="#contact" data-num="06">Contact</a>
             </div>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="nav-right">
+                <a href="https://www.linkedin.com/in/chirag-singh-292193186" target="_blank" class="nav-social" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+        <div class="mobile-menu-inner">
+            <a href="#about"><span class="mobile-num">01</span>About</a>
+            <a href="#education"><span class="mobile-num">02</span>Education</a>
+            <a href="#experience"><span class="mobile-num">03</span>Experience</a>
+            <a href="#projects"><span class="mobile-num">04</span>Projects</a>
+            <a href="#skills"><span class="mobile-num">05</span>Skills</a>
+            <a href="#contact"><span class="mobile-num">06</span>Contact</a>
+        </div>
     </div>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="hero-bg-pattern"></div>
+        <div class="hero-grain"></div>
         <div class="hero-content">
-            <p class="hero-greeting animate-in">Hello, I'm</p>
-            <h1 class="hero-name animate-in delay-1">Chirag<br>Singh</h1>
-            <p class="hero-tagline animate-in delay-2">MBA Graduate &bull; Product &amp; Strategy &bull; Digital Transformation</p>
-            <div class="hero-cta animate-in delay-3">
-                <a href="#about" class="btn btn-primary">Discover My Journey</a>
+            <div class="hero-badge animate-in">
+                <span class="badge-dot"></span>
+                Open to Opportunities
+            </div>
+            <p class="hero-greeting animate-in delay-1">Hello, I'm</p>
+            <h1 class="hero-name animate-in delay-2">Chirag<br>Singh</h1>
+            <div class="hero-title-wrapper animate-in delay-3">
+                <div class="hero-title-line"></div>
+                <p class="hero-tagline">MBA Graduate &bull; Product &amp; Strategy &bull; Digital Transformation</p>
+                <div class="hero-title-line"></div>
+            </div>
+            <p class="hero-sub animate-in delay-3">Bridging frontline execution with big-picture thinking.<br>Based in Melbourne, Australia.</p>
+            <div class="hero-cta animate-in delay-4">
+                <a href="#about" class="btn btn-primary">
+                    Discover My Journey
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                </a>
                 <a href="#contact" class="btn btn-outline">Let's Connect</a>
+            </div>
+        </div>
+        <div class="hero-stats animate-in delay-4">
+            <div class="hero-stat">
+                <span class="stat-number" data-count="4">0</span>
+                <span class="stat-label">Consulting Projects</span>
+            </div>
+            <div class="hero-stat">
+                <span class="stat-number" data-count="2">0</span>
+                <span class="stat-label">Countries</span>
+            </div>
+            <div class="hero-stat">
+                <span class="stat-number" data-count="4">0</span>
+                <span class="stat-label">Industry Roles</span>
             </div>
         </div>
         <div class="scroll-indicator animate-in delay-4">
@@ -58,6 +107,28 @@
             <span>Scroll</span>
         </div>
     </section>
+
+    <!-- Marquee -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>Product Management</span><span class="marquee-dot">&diams;</span>
+                <span>Digital Transformation</span><span class="marquee-dot">&diams;</span>
+                <span>Strategy &amp; Consulting</span><span class="marquee-dot">&diams;</span>
+                <span>Business Operations</span><span class="marquee-dot">&diams;</span>
+                <span>Innovation</span><span class="marquee-dot">&diams;</span>
+                <span>Design Thinking</span><span class="marquee-dot">&diams;</span>
+                <span>Agribusiness</span><span class="marquee-dot">&diams;</span>
+                <span>Product Management</span><span class="marquee-dot">&diams;</span>
+                <span>Digital Transformation</span><span class="marquee-dot">&diams;</span>
+                <span>Strategy &amp; Consulting</span><span class="marquee-dot">&diams;</span>
+                <span>Business Operations</span><span class="marquee-dot">&diams;</span>
+                <span>Innovation</span><span class="marquee-dot">&diams;</span>
+                <span>Design Thinking</span><span class="marquee-dot">&diams;</span>
+                <span>Agribusiness</span><span class="marquee-dot">&diams;</span>
+            </div>
+        </div>
+    </div>
 
     <!-- About Section -->
     <section class="section about" id="about">
@@ -67,15 +138,20 @@
                 <div class="about-photo">
                     <div class="photo-frame">
                         <div class="photo-placeholder">
-                            <span>Your Photo</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" width="40" height="40"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            <span>Photo Coming Soon</span>
                         </div>
+                    </div>
+                    <div class="photo-accent-card">
+                        <span class="accent-card-icon">&ldquo;</span>
+                        <p>There is nothing greater than investing in yourself.</p>
                     </div>
                 </div>
                 <div class="about-text">
                     <h2 class="section-title">The Short Version</h2>
-                    <p class="about-lead">I moved to Melbourne from Delhi knowing no one, backed by one belief &mdash; <strong>there is nothing greater than investing in yourself.</strong></p>
-                    <p>MBA graduate from RMIT University with hands-on operations experience paired with applied business strategy, consulting, and data analytics. I thrive in team environments where ideas are challenged, shaped, and turned into action &mdash; bridging frontline execution with big-picture thinking.</p>
-                    <p>I'm drawn to roles in product management, strategy, business operations, and innovation where I can think strategically, collaborate closely, and help organisations navigate digital transformation.</p>
+                    <p class="about-lead">Two years ago, I left home, moved to a country where I knew no one, and bet on myself. Today I hold an MBA from RMIT University, Melbourne.</p>
+                    <p>Coming from an English Honours background in Delhi, this wasn't the most obvious path. But that's exactly why it felt right. I wanted to challenge myself, stretch beyond what was comfortable, and learn how business, technology, and people intersect.</p>
+                    <p>I pair hands-on operations experience with applied business strategy, consulting, and data analytics. I thrive in team environments where ideas are challenged, shaped, and turned into action &mdash; bridging frontline execution with big-picture thinking.</p>
                     <div class="about-details">
                         <div class="detail">
                             <span class="detail-label">Location</span>
@@ -87,12 +163,18 @@
                         </div>
                         <div class="detail">
                             <span class="detail-label">Visa</span>
-                            <span class="detail-value">Post-Study Work Visa (485) from August</span>
+                            <span class="detail-value">485 from August 2025</span>
                         </div>
                         <div class="detail">
                             <span class="detail-label">Seeking</span>
-                            <span class="detail-value">Product, Strategy, Operations &amp; Innovation Roles</span>
+                            <span class="detail-value">Product, Strategy, Operations &amp; Innovation</span>
                         </div>
+                    </div>
+                    <div class="about-cta">
+                        <a href="https://www.linkedin.com/in/chirag-singh-292193186" target="_blank" class="btn btn-outline btn-sm">
+                            View LinkedIn
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -108,9 +190,14 @@
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-card">
-                        <div class="timeline-date">2024 &mdash; 2026</div>
-                        <h3>Master of Business Administration</h3>
-                        <p class="timeline-org">RMIT University, Melbourne, Australia</p>
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-date">2024 &mdash; 2026</div>
+                                <h3>Master of Business Administration</h3>
+                                <p class="timeline-org">RMIT University, Melbourne, Australia</p>
+                            </div>
+                            <div class="timeline-badge">Completed</div>
+                        </div>
                         <p>Completed MBA with a focus on digital transformation, strategy, and leadership. Delivered consulting projects for real organisations including Life Saving Victoria and Cargill. Results to be declared July 2026.</p>
                         <div class="timeline-tags">
                             <span class="tag">Strategy</span>
@@ -127,9 +214,14 @@
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-card">
-                        <div class="timeline-date">2019 &mdash; 2022</div>
-                        <h3>Bachelor of Arts (Honours) &mdash; English</h3>
-                        <p class="timeline-org">FIMT, GGSIPU, Delhi, India &bull; CGPA: 7.71</p>
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-date">2019 &mdash; 2022</div>
+                                <h3>Bachelor of Arts (Honours) &mdash; English</h3>
+                                <p class="timeline-org">FIMT, GGSIPU, Delhi, India</p>
+                            </div>
+                            <div class="timeline-badge">CGPA 7.71</div>
+                        </div>
                         <p>Built a strong foundation in critical thinking, communication, analysis, and stakeholder engagement. Developed the ability to distil complex ideas into clear, compelling narratives &mdash; a skill that carries into every professional context.</p>
                         <div class="timeline-tags">
                             <span class="tag">Critical Analysis</span>
@@ -147,42 +239,71 @@
         <div class="container">
             <div class="section-label">03 &mdash; Experience</div>
             <h2 class="section-title">Where I've Worked</h2>
-            <div class="exp-grid">
-                <div class="exp-card">
-                    <div class="exp-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+            <p class="section-subtitle">From frontline operations in Melbourne to brand activations in Delhi &mdash; every role taught me something I carry forward.</p>
+            <div class="exp-list">
+                <div class="exp-item">
+                    <div class="exp-left">
+                        <div class="exp-period">Sep 2024 &mdash; Present</div>
+                        <div class="exp-location">Melbourne, Australia</div>
                     </div>
-                    <div class="exp-type">Sep 2024 &mdash; Present</div>
-                    <h3>Online Team Member, CFC</h3>
-                    <p class="exp-company">Woolworths Group &bull; Melbourne</p>
-                    <p>Prepare and fulfil customer orders accurately within a high-volume distribution environment, maintaining quality standards and on-time completion under time-sensitive conditions. Collaborate with team members to improve operational efficiency and customer satisfaction.</p>
+                    <div class="exp-center">
+                        <div class="exp-dot"></div>
+                        <div class="exp-line"></div>
+                    </div>
+                    <div class="exp-right">
+                        <div class="exp-type-badge">Part-Time</div>
+                        <h3>Online Team Member, Customer Fulfilment Centre</h3>
+                        <p class="exp-company">Woolworths Group</p>
+                        <p class="exp-desc">Prepare and fulfil customer orders accurately within a high-volume distribution environment, maintaining quality standards and on-time completion under time-sensitive conditions. Collaborate with team members to improve operational efficiency and customer satisfaction.</p>
+                    </div>
                 </div>
-                <div class="exp-card">
-                    <div class="exp-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1z"/><path d="M13 8h5l3 3v5a1 1 0 01-1 1h-7"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+                <div class="exp-item">
+                    <div class="exp-left">
+                        <div class="exp-period">2024 &mdash; 2025</div>
+                        <div class="exp-location">Melbourne, Australia</div>
                     </div>
-                    <div class="exp-type">2024 &mdash; 2025</div>
-                    <h3>Warehouse Associate</h3>
-                    <p class="exp-company">Linfox &bull; Melbourne</p>
-                    <p>Supported warehouse operations including unloading, picking, packing, and inventory handling while following safety procedures and contributing to efficient supply-chain processes.</p>
+                    <div class="exp-center">
+                        <div class="exp-dot"></div>
+                        <div class="exp-line"></div>
+                    </div>
+                    <div class="exp-right">
+                        <div class="exp-type-badge">Summer Role</div>
+                        <h3>Warehouse Associate</h3>
+                        <p class="exp-company">Linfox</p>
+                        <p class="exp-desc">Supported warehouse operations including unloading, picking, packing, and inventory handling while following safety procedures and contributing to efficient supply-chain processes.</p>
+                    </div>
                 </div>
-                <div class="exp-card">
-                    <div class="exp-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                <div class="exp-item">
+                    <div class="exp-left">
+                        <div class="exp-period">Dec 2020 &mdash; Mar 2021</div>
+                        <div class="exp-location">New Delhi, India</div>
                     </div>
-                    <div class="exp-type">Dec 2020 &mdash; Mar 2021</div>
-                    <h3>Brand Experience Associate</h3>
-                    <p class="exp-company">Hyundai Motor India Ltd. &bull; New Delhi</p>
-                    <p>Delivered brand experience and customer engagement activities for a leading automotive manufacturer, driving brand awareness and customer interaction through on-ground activations.</p>
+                    <div class="exp-center">
+                        <div class="exp-dot"></div>
+                        <div class="exp-line"></div>
+                    </div>
+                    <div class="exp-right">
+                        <div class="exp-type-badge">Contract</div>
+                        <h3>Brand Experience Associate</h3>
+                        <p class="exp-company">Hyundai Motor India Ltd.</p>
+                        <p class="exp-desc">Delivered brand experience and customer engagement activities for a leading automotive manufacturer, driving brand awareness and customer interaction through on-ground activations.</p>
+                    </div>
                 </div>
-                <div class="exp-card">
-                    <div class="exp-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                <div class="exp-item">
+                    <div class="exp-left">
+                        <div class="exp-period">Dec 2019 &mdash; Mar 2020</div>
+                        <div class="exp-location">New Delhi, India</div>
                     </div>
-                    <div class="exp-type">Dec 2019 &mdash; Mar 2020</div>
-                    <h3>Event Marketing Representative</h3>
-                    <p class="exp-company">HP Premium Laptops (PMG India) &bull; IGI Airport, New Delhi</p>
-                    <p>Led promotional activity for HP premium laptops at IGI Airport, driving customer engagement and brand awareness. Supported experiential marketing campaigns including Mahindra Formula E, Samsung India, and Kiran Nadar Museum initiatives.</p>
+                    <div class="exp-center">
+                        <div class="exp-dot"></div>
+                        <div class="exp-line"></div>
+                    </div>
+                    <div class="exp-right">
+                        <div class="exp-type-badge">Contract</div>
+                        <h3>Event Marketing Representative</h3>
+                        <p class="exp-company">HP Premium Laptops (PMG India) &bull; IGI Airport</p>
+                        <p class="exp-desc">Led promotional activity for HP premium laptops at one of India's busiest airports, driving customer engagement and brand awareness. Supported experiential marketing campaigns including Mahindra Formula E, Samsung India, and Kiran Nadar Museum initiatives.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -198,18 +319,22 @@
                     <div class="cert-logo">D</div>
                     <div class="cert-info">
                         <h3>Data Analytics Job Simulation</h3>
-                        <p>Deloitte Australia (via Forage, 2025)</p>
-                        <span class="tag">Data Modelling</span>
-                        <span class="tag">Tableau</span>
+                        <p>Deloitte Australia &bull; Forage, 2025</p>
+                        <div class="cert-tags">
+                            <span class="tag">Data Modelling</span>
+                            <span class="tag">Tableau</span>
+                        </div>
                     </div>
                 </div>
                 <div class="cert-card">
                     <div class="cert-logo">GS</div>
                     <div class="cert-info">
                         <h3>Job Simulation Program</h3>
-                        <p>Goldman Sachs (via Forage, 2025)</p>
-                        <span class="tag">Quantitative Risk Analysis</span>
-                        <span class="tag">Critical Thinking</span>
+                        <p>Goldman Sachs &bull; Forage, 2025</p>
+                        <div class="cert-tags">
+                            <span class="tag">Quantitative Risk Analysis</span>
+                            <span class="tag">Critical Thinking</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -221,13 +346,18 @@
         <div class="container">
             <div class="section-label">04 &mdash; Projects</div>
             <h2 class="section-title">What I've Built</h2>
-            <p class="section-subtitle">Consulting and innovation projects completed during my MBA &mdash; real organisations, real problems, real recommendations.</p>
+            <p class="section-subtitle">Consulting and innovation projects completed during my MBA &mdash; real organisations, real problems, actionable recommendations.</p>
             <div class="project-grid">
                 <div class="project-card">
-                    <div class="project-number">01</div>
-                    <h3>Digital Transformation Strategy</h3>
+                    <div class="project-top">
+                        <div class="project-number">01</div>
+                        <div class="project-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                        </div>
+                    </div>
                     <p class="project-client">Life Saving Victoria</p>
-                    <p>Analysed organisational challenges with a project team and proposed digital transformation initiatives spanning customer experience, technology adoption, and operational improvement.</p>
+                    <h3>Digital Transformation Strategy</h3>
+                    <p class="project-desc">Analysed organisational challenges with a project team and proposed digital transformation initiatives spanning customer experience, technology adoption, and operational improvement.</p>
                     <div class="timeline-tags">
                         <span class="tag">Digital Transformation</span>
                         <span class="tag">Customer Experience</span>
@@ -235,10 +365,15 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-number">02</div>
-                    <h3>AI-Enabled Supply Chain Consulting</h3>
+                    <div class="project-top">
+                        <div class="project-number">02</div>
+                        <div class="project-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                        </div>
+                    </div>
                     <p class="project-client">Cargill</p>
-                    <p>Conducted stakeholder analysis and governance assessment, delivering strategic recommendations for AI-enabled supply chain and logistics improvement.</p>
+                    <h3>AI-Enabled Supply Chain Consulting</h3>
+                    <p class="project-desc">Conducted stakeholder analysis and governance assessment, delivering strategic recommendations for AI-enabled supply chain and logistics improvement.</p>
                     <div class="timeline-tags">
                         <span class="tag">AI &amp; Supply Chain</span>
                         <span class="tag">Stakeholder Analysis</span>
@@ -246,10 +381,15 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-number">03</div>
-                    <h3>Product Innovation &mdash; MBA Reimagined</h3>
+                    <div class="project-top">
+                        <div class="project-number">03</div>
+                        <div class="project-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                        </div>
+                    </div>
                     <p class="project-client">RMIT MBA</p>
-                    <p>Reframed the MBA program as a digital product; ran primary research and competitor benchmarking to recommend AI-integration and student-outcome improvements.</p>
+                    <h3>Product Innovation &mdash; MBA Reimagined</h3>
+                    <p class="project-desc">Reframed the MBA program as a digital product; ran primary research and competitor benchmarking to recommend AI-integration and student-outcome improvements.</p>
                     <div class="timeline-tags">
                         <span class="tag">Product Innovation</span>
                         <span class="tag">Primary Research</span>
@@ -257,10 +397,15 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-number">04</div>
-                    <h3>Digital Entrepreneurship Ventures</h3>
+                    <div class="project-top">
+                        <div class="project-number">04</div>
+                        <div class="project-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                        </div>
+                    </div>
                     <p class="project-client">RMIT MBA</p>
-                    <p>Built business concepts and digital business models supported by market and competitor analysis to validate venture ideas and assess commercial viability.</p>
+                    <h3>Digital Entrepreneurship Ventures</h3>
+                    <p class="project-desc">Built business concepts and digital business models supported by market and competitor analysis to validate venture ideas and assess commercial viability.</p>
                     <div class="timeline-tags">
                         <span class="tag">Entrepreneurship</span>
                         <span class="tag">Business Modelling</span>
@@ -274,10 +419,13 @@
     <!-- Skills Section -->
     <section class="section skills" id="skills">
         <div class="container">
-            <div class="section-label">05 &mdash; Skills</div>
+            <div class="section-label">05 &mdash; Skills &amp; Interests</div>
             <h2 class="section-title">What I Bring</h2>
             <div class="skills-grid">
                 <div class="skill-category">
+                    <div class="skill-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                    </div>
                     <h3>Strategic</h3>
                     <ul>
                         <li>Digital Transformation Strategy</li>
@@ -287,6 +435,9 @@
                     </ul>
                 </div>
                 <div class="skill-category">
+                    <div class="skill-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
                     <h3>Collaborative</h3>
                     <ul>
                         <li>Project Coordination</li>
@@ -296,6 +447,9 @@
                     </ul>
                 </div>
                 <div class="skill-category">
+                    <div class="skill-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    </div>
                     <h3>Analytical</h3>
                     <ul>
                         <li>Business Analytics</li>
@@ -305,6 +459,9 @@
                     </ul>
                 </div>
                 <div class="skill-category">
+                    <div class="skill-icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                    </div>
                     <h3>Communication</h3>
                     <ul>
                         <li>Business Writing &amp; Reporting</li>
@@ -314,38 +471,15 @@
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Interests Section -->
-    <section class="section interests" id="interests">
-        <div class="container">
-            <div class="section-label">05.5 &mdash; Interests</div>
-            <h2 class="section-title">What Drives Me</h2>
-            <div class="interests-grid">
-                <div class="interest-item">
-                    <span class="interest-icon">&#9670;</span>
-                    <span>Product Management</span>
-                </div>
-                <div class="interest-item">
-                    <span class="interest-icon">&#9670;</span>
-                    <span>Digital Innovation</span>
-                </div>
-                <div class="interest-item">
-                    <span class="interest-icon">&#9670;</span>
-                    <span>Entrepreneurship</span>
-                </div>
-                <div class="interest-item">
-                    <span class="interest-icon">&#9670;</span>
-                    <span>Agribusiness</span>
-                </div>
-                <div class="interest-item">
-                    <span class="interest-icon">&#9670;</span>
-                    <span>Emerging Technologies</span>
-                </div>
-                <div class="interest-item">
-                    <span class="interest-icon">&#9670;</span>
-                    <span>AI Applications in Business</span>
+            <div class="interests-section">
+                <h3 class="interests-heading">What Drives Me</h3>
+                <div class="interests-grid">
+                    <div class="interest-item"><span class="interest-icon">&diams;</span><span>Product Management</span></div>
+                    <div class="interest-item"><span class="interest-icon">&diams;</span><span>Digital Innovation</span></div>
+                    <div class="interest-item"><span class="interest-icon">&diams;</span><span>Entrepreneurship</span></div>
+                    <div class="interest-item"><span class="interest-icon">&diams;</span><span>Agribusiness</span></div>
+                    <div class="interest-item"><span class="interest-icon">&diams;</span><span>Emerging Technologies</span></div>
+                    <div class="interest-item"><span class="interest-icon">&diams;</span><span>AI Applications in Business</span></div>
                 </div>
             </div>
         </div>
@@ -354,45 +488,60 @@
     <!-- Contact Section -->
     <section class="section contact" id="contact">
         <div class="container">
-            <div class="section-label">06 &mdash; Contact</div>
+            <div class="section-label">06 &mdash; Get in Touch</div>
             <div class="contact-content">
-                <h2 class="contact-title">Let's Work Together</h2>
-                <p class="contact-subtitle">I'm actively seeking graduate opportunities in product management, strategy, digital transformation, business operations, and innovation. Let's connect.</p>
-                <div class="contact-links">
-                    <a href="mailto:207chaudharychirag@gmail.com" class="contact-item">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <h2 class="contact-title">Let's Work<br>Together</h2>
+                <p class="contact-subtitle">I'm actively seeking graduate opportunities in product management, strategy, digital transformation, business operations, and innovation.</p>
+                <div class="contact-grid">
+                    <a href="mailto:207chaudharychirag@gmail.com" class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                         </div>
-                        <span>207chaudharychirag@gmail.com</span>
-                    </a>
-                    <a href="tel:+61425196399" class="contact-item">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        <div>
+                            <span class="contact-card-label">Email</span>
+                            <span class="contact-card-value">207chaudharychirag@gmail.com</span>
                         </div>
-                        <span>+61 425 196 399</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="contact-item">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    <a href="tel:+61425196399" class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
                         </div>
-                        <span>LinkedIn Profile</span>
-                    </a>
-                    <a href="#" class="contact-item">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <div>
+                            <span class="contact-card-label">Phone</span>
+                            <span class="contact-card-value">+61 425 196 399</span>
                         </div>
-                        <span>Melbourne, VIC, Australia</span>
                     </a>
+                    <a href="https://www.linkedin.com/in/chirag-singh-292193186" target="_blank" class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </div>
+                        <div>
+                            <span class="contact-card-label">LinkedIn</span>
+                            <span class="contact-card-value">chirag-singh-292193186</span>
+                        </div>
+                    </a>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div>
+                            <span class="contact-card-label">Location</span>
+                            <span class="contact-card-value">Melbourne, VIC, Australia</span>
+                        </div>
+                    </div>
                 </div>
-                <a href="#" class="btn btn-primary btn-download">Download Resume</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Chirag Singh. Built with ambition from Melbourne.</p>
+        <div class="container footer-inner">
+            <p>&copy; 2025 Chirag Singh</p>
+            <p>Built with ambition from Melbourne</p>
+            <a href="#hero" class="back-to-top">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 15l-6-6-6 6"/></svg>
+            </a>
         </div>
     </footer>
 
