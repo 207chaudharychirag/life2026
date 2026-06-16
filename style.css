@@ -474,6 +474,17 @@ ul { list-style: none; }
     flex-wrap: wrap;
 }
 
+.hero-cta .btn-outline {
+    color: var(--white);
+    border-color: rgba(232, 213, 188, 0.5);
+}
+
+.hero-cta .btn-outline:hover {
+    background: var(--tan);
+    color: var(--white);
+    border-color: var(--tan);
+}
+
 .hero-stats {
     position: absolute;
     bottom: 5rem;
