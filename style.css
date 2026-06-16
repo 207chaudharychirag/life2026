@@ -475,14 +475,16 @@ ul { list-style: none; }
 }
 
 .hero-cta .btn-outline {
-    color: var(--white);
-    border-color: rgba(232, 213, 188, 0.5);
+    color: #FFFFFF !important;
+    border: 2px solid #D4B896 !important;
+    background: rgba(212, 184, 150, 0.15) !important;
+    backdrop-filter: blur(10px);
 }
 
 .hero-cta .btn-outline:hover {
-    background: var(--tan);
-    color: var(--white);
-    border-color: var(--tan);
+    background: #D4B896 !important;
+    color: #FFFFFF !important;
+    border-color: #D4B896 !important;
 }
 
 .hero-stats {
