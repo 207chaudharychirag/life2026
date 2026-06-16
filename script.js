@@ -2,6 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const journeyIntro = document.getElementById('journeyIntro');
     const journeyBtn = document.getElementById('journeyBtn');
     const carWindow = document.getElementById('carWindow');
+    const fog = document.getElementById('fog');
+    const wiperLeft = document.getElementById('wiperLeft');
+    const wiperRight = document.getElementById('wiperRight');
+    const speedNeedle = document.getElementById('speedNeedle');
+    const speedValue = document.getElementById('speedValue');
+    const starsContainer = document.getElementById('starsContainer');
+    const rainContainer = document.getElementById('rainContainer');
     const nav = document.getElementById('nav');
     const navToggle = document.getElementById('navToggle');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -10,25 +17,114 @@ document.addEventListener('DOMContentLoaded', () => {
     nav.style.opacity = '0';
     nav.style.pointerEvents = 'none';
 
-    journeyBtn.addEventListener('click', () => {
-        carWindow.classList.add('active');
+    // Generate stars
+    for (let i = 0; i < 80; i++) {
+        const star = document.createElement('div');
+        star.className = 'star' + (Math.random() > 0.7 ? ' moving' : '');
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 60 + '%';
+        star.style.animationDelay = Math.random() * 4 + 's';
+        star.style.animationDuration = (2 + Math.random() * 3) + 's';
+        const size = 1 + Math.random() * 2;
+        star.style.width = size + 'px';
+        star.style.height = size + 'px';
+        starsContainer.appendChild(star);
+    }
 
+    // Generate rain
+    function createRain() {
+        for (let i = 0; i < 40; i++) {
+            const drop = document.createElement('div');
+            drop.className = 'raindrop';
+            drop.style.left = Math.random() * 100 + '%';
+            drop.style.height = (10 + Math.random() * 20) + 'px';
+            drop.style.animationDuration = (0.4 + Math.random() * 0.4) + 's';
+            drop.style.animationDelay = Math.random() * 2 + 's';
+            drop.style.opacity = 0.2 + Math.random() * 0.4;
+            rainContainer.appendChild(drop);
+        }
+    }
+    createRain();
+
+    // Wiper animation loop
+    let wiperInterval = setInterval(() => {
+        wiperLeft.classList.add('wiping');
+        wiperRight.classList.add('wiping');
         setTimeout(() => {
-            carWindow.classList.add('rolling');
+            wiperLeft.classList.remove('wiping');
+            wiperRight.classList.remove('wiping');
+        }, 800);
+    }, 3000);
+
+    // Speed idle animation
+    let currentSpeed = 0;
+    let targetSpeed = 40;
+    function updateSpeed() {
+        const jitter = Math.sin(Date.now() / 800) * 5;
+        currentSpeed += (targetSpeed + jitter - currentSpeed) * 0.05;
+        speedValue.textContent = Math.round(currentSpeed);
+        const angle = -90 + (currentSpeed / 200) * 180;
+        speedNeedle.style.transform = `rotate(${angle}deg)`;
+        requestAnimationFrame(updateSpeed);
+    }
+    updateSpeed();
+
+    // Journey button click — the full transition
+    journeyBtn.addEventListener('click', () => {
+        journeyBtn.style.pointerEvents = 'none';
+
+        // 1. Speed up — needle jumps
+        targetSpeed = 160;
+
+        // 2. Fast wiper sweep
+        wiperLeft.classList.add('wiping');
+        wiperRight.classList.add('wiping');
+        clearInterval(wiperInterval);
+
+        // 3. Rain stops
+        setTimeout(() => {
+            rainContainer.style.transition = 'opacity 0.5s ease';
+            rainContainer.style.opacity = '0';
+        }, 300);
+
+        // 4. Fog clears
+        setTimeout(() => {
+            fog.classList.add('clearing');
         }, 400);
 
+        // 5. Content fades out
+        setTimeout(() => {
+            document.getElementById('journeyContent').style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+            document.getElementById('journeyContent').style.opacity = '0';
+            document.getElementById('journeyContent').style.transform = 'scale(0.95)';
+        }, 500);
+
+        // 6. Window frame appears
+        setTimeout(() => {
+            carWindow.classList.add('active');
+        }, 800);
+
+        // 7. Window rolls up (glass slides up)
+        setTimeout(() => {
+            carWindow.classList.add('rolling');
+        }, 1200);
+
+        // 8. Intro fades, portfolio revealed
         setTimeout(() => {
             journeyIntro.classList.add('hidden');
             document.body.style.overflow = '';
+            nav.style.transition = 'opacity 0.6s ease';
             nav.style.opacity = '1';
             nav.style.pointerEvents = '';
-            nav.style.transition = 'opacity 0.5s ease';
-        }, 1600);
+        }, 2200);
 
+        // 9. Cleanup
         setTimeout(() => {
             journeyIntro.style.display = 'none';
-        }, 2500);
+        }, 3200);
     });
+
+    // === MAIN SITE FUNCTIONALITY ===
 
     window.addEventListener('scroll', () => {
         nav.classList.toggle('scrolled', window.scrollY > 50);
@@ -46,6 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Cursor
     const cursorDot = document.getElementById('cursorDot');
     if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
         document.addEventListener('mousemove', (e) => {
@@ -65,6 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Scroll reveals
     const reveals = document.querySelectorAll(
         '.timeline-item, .exp-item, .project-card, .skill-category, ' +
         '.cert-card, .about-grid, .section-title, .section-label, ' +
@@ -87,6 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     reveals.forEach(el => observer.observe(el));
 
+    // Stat counters
     const statNumbers = document.querySelectorAll('.stat-number');
     let statsCounted = false;
 
@@ -113,6 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.hero-stats').forEach(el => statsObserver.observe(el));
 
+    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', (e) => {
             e.preventDefault();
@@ -125,6 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Active nav tracking
     const navLinks = document.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('.section, .hero');
 

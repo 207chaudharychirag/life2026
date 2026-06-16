@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Chirag Singh — MBA Graduate | Product & Strategy</title>
     <meta name="description" content="Chirag Singh — MBA Graduate from RMIT University. Aspiring Product & Strategy Professional based in Melbourne, Australia.">
     <meta property="og:title" content="Chirag Singh — Portfolio">
@@ -17,34 +17,80 @@
 
     <!-- Journey Intro Screen -->
     <div class="journey-intro" id="journeyIntro">
-        <div class="journey-bg"></div>
-        <div class="journey-content">
-            <div class="journey-road">
-                <div class="road-line"></div>
-                <div class="road-line"></div>
-                <div class="road-line"></div>
+        <!-- Night sky with stars -->
+        <div class="night-sky">
+            <div class="stars" id="starsContainer"></div>
+            <div class="shooting-star"></div>
+            <div class="shooting-star s2"></div>
+        </div>
+
+        <!-- Moving road scene -->
+        <div class="road-scene">
+            <div class="road">
+                <div class="road-center-line"></div>
+                <div class="road-center-line rl2"></div>
+                <div class="road-center-line rl3"></div>
+                <div class="road-center-line rl4"></div>
             </div>
+            <div class="road-glow"></div>
+        </div>
+
+        <!-- Rain drops on windshield -->
+        <div class="rain-container" id="rainContainer"></div>
+
+        <!-- Fog/condensation on glass -->
+        <div class="fog" id="fog"></div>
+
+        <!-- Windshield wipers -->
+        <div class="wiper wiper-left" id="wiperLeft"></div>
+        <div class="wiper wiper-right" id="wiperRight"></div>
+
+        <!-- Dashboard -->
+        <div class="dashboard">
+            <div class="dashboard-glow"></div>
+            <div class="speedometer">
+                <div class="speed-ring"></div>
+                <div class="speed-needle" id="speedNeedle"></div>
+                <div class="speed-value" id="speedValue">0</div>
+                <div class="speed-unit">km/h</div>
+            </div>
+            <div class="dashboard-lights">
+                <div class="dash-light dl1"></div>
+                <div class="dash-light dl2"></div>
+                <div class="dash-light dl3"></div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="journey-content" id="journeyContent">
             <p class="journey-pre">Chirag Singh</p>
             <h1 class="journey-title">Let's Start<br>The Journey</h1>
+            <p class="journey-sub">Every great career begins with a single step</p>
             <button class="journey-btn" id="journeyBtn">
+                <svg class="journey-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                 <span class="journey-btn-text">Tap to Begin</span>
                 <span class="journey-btn-pulse"></span>
             </button>
         </div>
-        <!-- Car Window Frame -->
+
+        <!-- Car Window Frame for transition -->
         <div class="car-window" id="carWindow">
-            <div class="window-glass" id="windowGlass"></div>
-            <div class="window-frame">
-                <div class="window-frame-top"></div>
-                <div class="window-frame-left"></div>
-                <div class="window-frame-right"></div>
-                <div class="window-reflection"></div>
+            <div class="window-glass" id="windowGlass">
+                <div class="glass-tint"></div>
+                <div class="glass-reflection"></div>
+                <div class="glass-reflection r2"></div>
             </div>
+            <div class="window-frame-top"></div>
+            <div class="window-frame-left"></div>
+            <div class="window-frame-right"></div>
+            <div class="window-frame-bottom"></div>
+        </div>
+
+        <!-- Side mirror -->
+        <div class="side-mirror">
+            <div class="mirror-glass"></div>
         </div>
     </div>
-
-    <!-- Window transition overlay for between sections -->
-    <div class="window-overlay" id="windowOverlay"></div>
 
     <!-- Cursor follower -->
     <div class="cursor-dot" id="cursorDot"></div>
