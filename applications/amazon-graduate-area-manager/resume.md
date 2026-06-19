@@ -5,6 +5,8 @@ Melbourne, VIC · +61 425 196 399 · 207chaudharychirag@gmail.com · LinkedIn
 ## PROFESSIONAL SUMMARY
 MBA candidate with hands-on fulfilment-centre and warehouse operations experience, combining frontline execution in high-volume logistics with applied business strategy, data analytics, and supply-chain consulting. Comfortable working to targets under time pressure, maintaining safety and quality standards, and using data to improve processes. Eager to step into a people-leadership role and develop a high-performing team. Available for night-shift operations.
 
+**Work rights:** Completing MBA (results July 2026); eligible to apply for the Temporary Graduate visa (subclass 485) with full, unrestricted work rights from August 2026.
+
 ## EDUCATION
 **Master of Business Administration (MBA)** — RMIT University, Melbourne · 2024–2026 (Expected)
 Relevant coursework: Leadership · Strategy · Business Analytics · Digital Transformation · Technology & Innovation
