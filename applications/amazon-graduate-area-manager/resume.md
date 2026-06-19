@@ -13,9 +13,11 @@ Relevant coursework: Leadership · Strategy · Business Analytics · Digital Tra
 
 ## OPERATIONS EXPERIENCE
 **Online Team Member — Customer Fulfilment Centre (CFC)** · Woolworths Group, Melbourne · Sep 2024–Present
-- Pick, pack and fulfil [add #] customer orders per shift in a high-volume distribution environment, consistently meeting accuracy and on-time-completion targets under time pressure.
-- Maintain quality and safety standards on the floor; collaborate with team members to remove bottlenecks and lift throughput.
-- [add a process-improvement example: a suggestion/change you made and its result].
+- Pick and pack multi-order trolley runs (up to 9 customer orders, ~85 items per run) across ambient, chilled and frozen zones, consistently completing runs ahead of target times.
+- Maintain high pick accuracy by verifying item images and article numbers, minimising mispicks in a fast-paced, time-sensitive environment.
+- Fulfil Direct-to-Boot (P2P) orders end-to-end and support dispatch handovers when required; have also worked alongside the night dispatch and inventory teams.
+- Resolve out-of-stock and missed orders by locating alternatives and completing short-picked items, protecting order completeness and customer satisfaction.
+- Train new starters and take on "rush picks" to help colleagues finish their runs once own targets are met — keeping the team on schedule.
 
 **Warehouse Associate** · Linfox, Melbourne · 2024–2025
 - Performed unloading, picking, packing and inventory handling while strictly following workplace health & safety procedures.

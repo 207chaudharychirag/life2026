@@ -48,7 +48,7 @@ and an assigned mentor.
 ## TODO before submitting
 - [x] Confirm OK with night shift (6:30pm–4:30am, 4 nights/week) — CONFIRMED OK with night shifts
 - [ ] Confirm OK with national relocation
-- [ ] Add quantified metrics to resume (orders/shift, accuracy %, process-improvement result)
+- [x] Add real CFC details to resume (trolley runs, ~85 items/run, multi-zone, accuracy method, P2P, cross-team work, training, rush picks)
 - [ ] Final proofread of resume + cover letter
 - [ ] Apply via amazon.jobs (LinkedIn Apply button redirects there) — Job ID A10452287
 - [ ] Mirror resume content into LinkedIn profile (headline / About / Experience)
