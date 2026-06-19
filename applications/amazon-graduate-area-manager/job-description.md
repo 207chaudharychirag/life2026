@@ -46,7 +46,9 @@ and an assigned mentor.
 - **Verdict:** Strong fit — apply.
 
 ## TODO before submitting
-- [ ] Confirm OK with night shift (6:30pm–4:30am, 4 nights/week) and relocation
+- [x] Confirm OK with night shift (6:30pm–4:30am, 4 nights/week) — CONFIRMED OK with night shifts
+- [ ] Confirm OK with national relocation
 - [ ] Add quantified metrics to resume (orders/shift, accuracy %, process-improvement result)
 - [ ] Final proofread of resume + cover letter
-- [ ] Submit application
+- [ ] Apply via amazon.jobs (LinkedIn Apply button redirects there) — Job ID A10452287
+- [ ] Mirror resume content into LinkedIn profile (headline / About / Experience)
